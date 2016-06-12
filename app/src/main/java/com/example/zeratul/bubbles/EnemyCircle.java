@@ -23,11 +23,12 @@ public class EnemyCircle extends SimpleCircle {
         EnemyCircle enemyCircle = new EnemyCircle(x, y, radius);
         return enemyCircle;
 
+
     }
 
     public void setEnemyOrFoodColorDependsOn(MainCircle mainCircle) {
         if (IsSmallerThan(mainCircle)) {
-            setColor(Color.GREEN);
+            setColor(Color.rgb(0, 200, 0));
         }
         else {
             setColor(ENEMY_COLOR);
@@ -40,5 +41,9 @@ public class EnemyCircle extends SimpleCircle {
         return true;
         }
         return false;
+    }
+
+    public boolean isIntersecting(SimpleCircle circle) {
+        return radius + circle.radius >= Math.sqrt(Math.pow(x - circle.x, 2) + Math.pow(y - circle.y, 2));
     }
 }

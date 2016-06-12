@@ -32,4 +32,8 @@ public class SimpleCircle {
     public void setColor(int color) {
         this.color = color;
     }
+
+    public SimpleCircle getCirclearea() {
+        return new SimpleCircle(x, y, radius * 3);
+    }
 }
