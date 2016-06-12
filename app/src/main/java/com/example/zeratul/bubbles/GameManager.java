@@ -45,7 +45,13 @@ public class GameManager {
         canvasView.drawCircle(mainCircle);
         for (EnemyCircle circle : circles) {
             canvasView.drawCircle(circle);
-            
+            }
+        calculateAndSetEnemyCirclesColor();
+    }
+
+    private void calculateAndSetEnemyCirclesColor() {
+        for (EnemyCircle circle : circles) {
+            circle.setEnemyOrFoodColorDependsOn(mainCircle);
         }
     }
 
