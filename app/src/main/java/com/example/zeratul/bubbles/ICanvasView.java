@@ -1,6 +1,6 @@
 package com.example.zeratul.bubbles;
 
 public interface ICanvasView {
-    void drawCircle(MainCircle circle);
+    void drawCircle(SimpleCircle circle);
     void redraw();
 }
