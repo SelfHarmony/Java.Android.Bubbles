@@ -9,9 +9,14 @@ public class EnemyCircle extends SimpleCircle {
     public static final int FROM_RADIUS = 10;
     public static final int TO_RADIUS = 110;
     public static final int ENEMY_COLOR = Color.RED;
+    public static final int CIRCLE_SPEED = 10;
+    private int dx;
+    private int dy;
 
-    public EnemyCircle(int y, int x, int radius) {
+    public EnemyCircle(int y, int x, int radius, int dx, int dy) {
         super(y, x, radius);
+        this.dx = dx;
+        this.dy = dy;
     }
 
 
@@ -19,8 +24,10 @@ public class EnemyCircle extends SimpleCircle {
         Random random = new Random();
         int x = random.nextInt(GameManager.getWidth());
         int y = random.nextInt(GameManager.getHeight());
+        int dx = random.nextInt(CIRCLE_SPEED);
+        int dy = random.nextInt(CIRCLE_SPEED);
         int radius = FROM_RADIUS + random.nextInt(TO_RADIUS - FROM_RADIUS);
-        EnemyCircle enemyCircle = new EnemyCircle(x, y, radius);
+        EnemyCircle enemyCircle = new EnemyCircle(x, y, radius, dx, dy);
         return enemyCircle;
 
 
@@ -45,5 +52,11 @@ public class EnemyCircle extends SimpleCircle {
 
     public boolean isIntersecting(SimpleCircle circle) {
         return radius + circle.radius >= Math.sqrt(Math.pow(x - circle.x, 2) + Math.pow(y - circle.y, 2));
+    }
+
+    public void moveOneStep() {
+        x += dx;
+        x += dy;
+        
     }
 }
