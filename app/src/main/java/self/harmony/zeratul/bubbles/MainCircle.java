@@ -1,4 +1,4 @@
-package com.example.zeratul.bubbles;
+package self.harmony.zeratul.bubbles;
 
 import android.graphics.Color;
 

@@ -1,4 +1,4 @@
-package com.example.zeratul.bubbles;
+package self.harmony.zeratul.bubbles;
 
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;

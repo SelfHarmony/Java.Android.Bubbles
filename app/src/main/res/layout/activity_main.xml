@@ -5,5 +5,5 @@
               android:background="#FFF"
               android:layout_height="match_parent">
 
-    <com.example.zeratul.bubbles.CanvasView android:layout_width="match_parent" android:layout_height="match_parent"/>
+    <self.harmony.zeratul.bubbles.CanvasView android:layout_width="match_parent" android:layout_height="match_parent"/>
 </LinearLayout>

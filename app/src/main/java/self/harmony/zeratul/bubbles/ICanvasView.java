@@ -1,4 +1,4 @@
-package com.example.zeratul.bubbles;
+package self.harmony.zeratul.bubbles;
 
 public interface ICanvasView {
     void drawCircle(SimpleCircle circle);
