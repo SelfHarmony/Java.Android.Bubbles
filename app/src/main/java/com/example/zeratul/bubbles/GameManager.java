@@ -29,6 +29,7 @@ public class GameManager {
             } while (circle.isIntersecting(mainCircleArea));
             circles.add(circle);
         }
+        calculateAndSetEnemyCirclesColor();
     }
 
     public static int getWidth() {
@@ -49,7 +50,6 @@ public class GameManager {
         for (EnemyCircle circle : circles) {
             canvasView.drawCircle(circle);
             }
-        calculateAndSetEnemyCirclesColor();
     }
 
     private void calculateAndSetEnemyCirclesColor() {

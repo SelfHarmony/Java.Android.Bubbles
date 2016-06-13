@@ -7,9 +7,9 @@ public class SimpleCircle {
     protected int radius;
     private int color;
 
-    public SimpleCircle(int y, int x, int radius) {
-        this.y = y;
+    public SimpleCircle(int x, int y, int radius) {
         this.x = x;
+        this.y = y;
         this.radius = radius;
     }
 
@@ -34,6 +34,10 @@ public class SimpleCircle {
     }
 
     public SimpleCircle getCirclearea() {
-        return new SimpleCircle(x, y, radius * 3);
+        return new SimpleCircle(x, y, radius * 2);
+    }
+
+    public boolean isIntersecting(SimpleCircle circle) {
+        return radius + circle.radius >= Math.sqrt(Math.pow(x - circle.x, 2) + Math.pow(y - circle.y, 2));
     }
 }

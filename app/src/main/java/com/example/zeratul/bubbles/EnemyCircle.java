@@ -24,8 +24,8 @@ public class EnemyCircle extends SimpleCircle {
         Random random = new Random();
         int x = random.nextInt(GameManager.getWidth());
         int y = random.nextInt(GameManager.getHeight());
-        int dx = random.nextInt(CIRCLE_SPEED);
-        int dy = random.nextInt(CIRCLE_SPEED);
+        int dx = 1 + random.nextInt(CIRCLE_SPEED);
+        int dy = 1 + random.nextInt(CIRCLE_SPEED);
         int radius = FROM_RADIUS + random.nextInt(TO_RADIUS - FROM_RADIUS);
         EnemyCircle enemyCircle = new EnemyCircle(x, y, radius, dx, dy);
         return enemyCircle;
@@ -47,16 +47,24 @@ public class EnemyCircle extends SimpleCircle {
     if (radius < circle.radius) {
         return true;
         }
+    else {
         return false;
+        }
     }
 
-    public boolean isIntersecting(SimpleCircle circle) {
-        return radius + circle.radius >= Math.sqrt(Math.pow(x - circle.x, 2) + Math.pow(y - circle.y, 2));
-    }
+
 
     public void moveOneStep() {
         x += dx;
-        x += dy;
-        
+        y += dy;
+        checkBounds();
+    }
+
+    private void checkBounds() {
+        if (x > GameManager.getWidth() || x < 0)
+            dx = -dx;
+        if (y > GameManager.getHeight() || y < 0)
+            dy = -dy;
+
     }
 }
